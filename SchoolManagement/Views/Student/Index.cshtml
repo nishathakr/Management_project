@@ -1,0 +1,69 @@
+﻿@model IEnumerable<SchoolManagement.Model.Entities.Student>
+
+@{
+    ViewData["Title"] = "Students";
+}
+
+<h1>Students</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form asp-action="Index">
+    <div>
+        <div class="form-group">
+            <label for="searchClass">Search by Class:</label>
+            <input type="text" id="searchClass" name="searchClass" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="searchString">Search by Name:</label>
+            <input type="text" id="searchString" name="searchString" class="form-control" />
+        </div>
+    </div>
+    <input type="submit" value="Search" class="btn btn-primary" />
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RollNumber)
+            </th>
+            <th>
+                Image
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Class)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RollNumber)
+                </td>
+                <td>
+                    <img src="@Url.Content("~/images/" + item.ImageUrl)" alt="Image" style="width:100px;height:auto;" />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

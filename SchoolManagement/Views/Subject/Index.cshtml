@@ -1,0 +1,29 @@
+﻿@model IEnumerable<SchoolManagement.Model.Entities.Subject>
+
+@{
+    ViewData["Title"] = "Subjects";
+}
+
+<h1>Subjects</h1>
+
+<p>
+    <a href="@Url.Action("Create")">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Subject</th>
+            <th>Class</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var subject in Model)
+        {
+            <tr>
+                <td>@subject.Name</td>
+                <td>@subject.Class</td>
+            </tr>
+        }
+    </tbody>
+</table>
