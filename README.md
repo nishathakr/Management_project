@@ -1,1 +1,1 @@
-This project setup provides a full-featured system for managing students, teachers, and subjects with appropriate validations and database interactions.
+This repository contains a simple developer test project aimed at demonstrating fundamental web development skills, including the creation of web pages with validations, database interactions, and the application of design patterns, error handling, and logging. This project setup provides a full-featured system for managing students, teachers, and subjects with appropriate validations and database interactions.
